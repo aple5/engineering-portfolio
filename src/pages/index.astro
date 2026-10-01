@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { profile } from '../data/site';
+import { withBase } from '../lib/urls';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const [featured, ...otherProjects] = projects;
+---
+
+<BaseLayout title="Mechanical engineering portfolio" description="Selected mechanical engineering, CAD, and autonomous systems work by Alec Schneider, UCF mechanical engineering student.">
+  <section class="home-hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-topline"><span>ENGINEERING PORTFOLIO</span><span>{profile.location.toUpperCase()} <span class="hero-coordinates">28°36′N / 81°12′W</span></span></div>
+    <div class="hero-content">
+      <p class="hero-kicker"><span class="live-dot"></span> MECHANICAL ENGINEERING · UCF ’29</p>
+      <h1>Alec<br /><span>Schneider.</span></h1>
+      <div class="hero-bottom">
+        <p>Mechanical design, CAD, and project development—applied to boats, mechanisms, and rocket hardware.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+          <a class="hero-resume" href={withBase(profile.resume)} download="Alec-Schneider-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-foot"><span>01 — 03 SELECTED PROJECTS</span><span>DESIGN · BUILD · LEARN</span></div>
+  </section>
+
+  <section class="work-section page-wrap" id="work" aria-labelledby="work-heading">
+    <div class="section-heading">
+      <div><p class="eyebrow section-label"><span>SELECTED WORK</span><span>MECHANICAL · AEROSPACE</span></p><h2 id="work-heading">Projects built<br /><em>to solve a problem.</em></h2></div>
+      <p class="section-side-note">Three projects. Different scales.<br />One hands-on approach.</p>
+    </div>
+    {featured && <ProjectCard project={featured} featured />}
+    {otherProjects.length > 0 && <div class="project-grid">{otherProjects.map((project) => <ProjectCard project={project} />)}</div>}
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="page-wrap about-inner">
+      <div class="about-title"><p class="eyebrow"><span>ABOUT</span><span>UCF · ORLANDO, FL</span></p><h2>Engineering starts<br />with <em>curiosity.</em></h2></div>
+      <div class="about-copy"><p>I’m a mechanical engineering student at the University of Central Florida who enjoys taking a design from the CAD screen toward a real working system.</p><p>From an autonomous boat on campus to independent rocket hardware design, I bring a builder’s mindset, a steady attention to detail, and a willingness to work through the hard parts.</p><div class="credentials"><div><span class="credential-icon" aria-hidden="true">◧</span><span><b>B.S. Mechanical Engineering · 3.75 GPA</b><small>University of Central Florida · May 2029</small></span></div><div><span class="credential-icon" aria-hidden="true">✳</span><span><b>CSWA Certified</b><small>Certified SOLIDWORKS Associate</small></span></div></div></div>
+    </div>
+  </section>
+
+  <section class="contact-section page-wrap" id="contact">
+    <p class="eyebrow"><span>HAVE A PROJECT IN MIND?</span><span>LET’S CONNECT</span></p>
+    <div class="contact-row"><h2>Good work<br /><em>starts somewhere.</em></h2><div class="contact-actions"><a class="button button-dark" href={`mailto:${profile.email}`}>Say hello <span aria-hidden="true">↗</span></a><a class="contact-secondary" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn profile <span aria-hidden="true">↗</span></a></div></div>
+  </section>
+</BaseLayout>

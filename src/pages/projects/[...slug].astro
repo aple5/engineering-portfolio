@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { withBase } from '../../lib/urls';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const allProjects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const currentIndex = allProjects.findIndex((entry) => entry.id === project.id);
+const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
+---
+
+<BaseLayout title={`${project.data.title} — ${project.data.subtitle}`} description={project.data.summary}>
+  <article class="case-study">
+    <div class="page-wrap case-topline"><a class="back-link" href={withBase('/#work')}><span aria-hidden="true">←</span> All projects</a><span class="eyebrow">CASE STUDY <span> / </span> {String(project.data.order).padStart(2, '0')}</span></div>
+    <header class="case-header page-wrap"><p class="eyebrow case-category"><span class="live-dot"></span>{project.data.category}</p><h1>{project.data.title}<span>{project.data.subtitle}</span></h1><p class="case-summary">{project.data.summary}</p><div class="case-tags"><span>{project.data.status}</span>{project.data.tools.map((tool) => <span>{tool}</span>)}</div></header>
+    <figure class="case-hero page-wrap"><img src={withBase(project.data.hero)} alt={project.data.heroAlt} fetchpriority="high" /><figcaption><span>01 / PROJECT OVERVIEW</span><span>CAD · SOLIDWORKS</span></figcaption></figure>
+    <div class="page-wrap case-body-grid">
+      <aside class="case-facts" aria-label="Project details"><div class="fact-block"><span class="eyebrow">MY ROLE</span><p>Chief CAD designer,<br />programmer & developer</p></div><div class="fact-block"><span class="eyebrow">STATUS</span><p>{project.data.status}</p></div><div class="fact-block"><span class="eyebrow">TOOLS</span><p>{project.data.tools.join(' · ')}</p></div>{project.data.result && <div class="fact-highlight"><span class="eyebrow">RESULT</span><p>{project.data.result}</p></div>}</aside>
+      <div class="case-prose"><Content /></div>
+    </div>
+    <section class="case-gallery page-wrap" aria-labelledby="gallery-title"><div class="gallery-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h2 id="gallery-title">Design <em>details.</em></h2></div><span class="gallery-count">{String(project.data.gallery.length).padStart(2, '0')} VIEWS</span></div><div class="gallery-grid">{project.data.gallery.map((image, index) => <figure class="gallery-item"><div class="gallery-image"><img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" /></div><figcaption><span class="gallery-index">{String(index + 2).padStart(2, '0')}</span><span>{image.caption}</span></figcaption></figure>)}</div></section>
+    <nav class="next-project page-wrap" aria-label="Project navigation"><span class="eyebrow">KEEP EXPLORING</span><a href={withBase(`/projects/${nextProject.id}/`)}><span><small>NEXT PROJECT</small><b>{nextProject.data.title} <i aria-hidden="true">↗</i></b></span><span class="next-arrow" aria-hidden="true">↗</span></a></nav>
+  </article>
+</BaseLayout>

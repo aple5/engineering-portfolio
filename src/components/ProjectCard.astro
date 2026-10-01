@@ -1,0 +1,23 @@
+---
+import { withBase } from '../lib/urls';
+interface Props {
+  project: { id: string; data: { title: string; subtitle: string; summary: string; hero: string; heroAlt: string; category: string; result?: string } };
+  featured?: boolean;
+}
+const { project, featured = false } = Astro.props;
+const href = withBase(`/projects/${project.id}/`);
+---
+
+<article class:list={["project-card", featured && "project-card-featured"]}>
+  <a class="project-image-link" href={href} aria-label={`View ${project.data.title}: ${project.data.subtitle}`}>
+    <img class="project-image" src={withBase(project.data.hero)} alt={project.data.heroAlt} loading={featured ? 'eager' : 'lazy'} decoding="async" />
+    <span class="image-index" aria-hidden="true">{project.id === 'gnorr' ? '01' : project.id === 'rocket-hardware' ? '02' : '03'} <span>↗</span></span>
+  </a>
+  <div class="project-card-copy">
+    <div class="eyebrow project-category"><span class="live-dot" aria-hidden="true"></span>{project.data.category}</div>
+    <h3><a href={href}>{project.data.title}<span class="project-subtitle">{project.data.subtitle}</span></a></h3>
+    <p>{project.data.summary}</p>
+    {project.data.result && <p class="project-result"><span aria-hidden="true">✳</span> {project.data.result}</p>}
+    <a class="text-link" href={href}>Explore project <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
