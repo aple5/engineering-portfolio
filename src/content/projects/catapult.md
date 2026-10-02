@@ -1,23 +1,20 @@
 ---
 title: "Catapult"
-subtitle: "Mechanism components"
-summary: "SolidWorks components and fabrication exports for a small catapult mechanism."
+subtitle: "Mechanism assembly"
+summary: "A SolidWorks assembly view of a small catapult mechanism, supported by documented components and selected fabrication exports."
 order: 3
-status: "CAD components documented"
+status: "CAD assembly concept"
 tools: ["SOLIDWORKS", "CAD", "STL exports"]
-hero: "/images/cad/catapult-parts.webp"
-heroAlt: "Separate CAD renders of the catapult striker and pin components"
+hero: "/images/projects/catapult-assembly.webp"
+heroAlt: "SolidWorks CAD assembly view of a catapult mechanism with a pivoting launcher arm"
 category: "MECHANICAL DESIGN"
 gallery:
-  - src: "/images/cad/catapult-striker-detail.webp"
-    alt: "STL render of the Striker CAD part"
-    caption: "The Striker part, shown from a separate angle."
-  - src: "/images/cad/catapult-pin-detail.webp"
-    alt: "STL render of the 2.5 by 40 millimeter Catapult pin"
-    caption: "The 2.5 × 40 mm pin part and its STL render."
+  - src: "/images/projects/catapult-detail.webp"
+    alt: "Close view of the catapult arm, pivot joint, and launcher cup in the CAD assembly"
+    caption: "Arm and pivot detail from the SolidWorks assembly concept."
 ---
 
-The available SolidWorks parts include a striker, track wheel, and 2.5 × 40 mm pin. Together, they document the components of a catapult mechanism.
+The SolidWorks files include an assembly view alongside component models for a striker, track wheel, and 2.5 × 40 mm pin. The supplied assembly image communicates how the launcher components are arranged in the CAD concept.
 
 ## My role
 
@@ -25,10 +22,10 @@ I served as chief CAD designer, programmer, and developer for the project.
 
 ## Component design
 
-The folder contains SolidWorks part files for the striker, track wheel, and pin. STL exports are available for the striker and pin, showing that those parts also have mesh-format versions for fabrication workflows.
+The folder contains SolidWorks part files for the striker, track wheel, and pin. STL exports are available for the striker and pin, providing mesh-format files for fabrication workflows.
 
-The files available for this portfolio document individual components rather than an assembled mechanism. The page therefore presents each part on its own and does not claim assembly or test results.
+The image presents a CAD assembly concept; it does not establish that the mechanism was fabricated or tested. No physical build or test results are claimed here.
 
 ## What this project demonstrates
 
-Modeling and documenting mechanical parts in SolidWorks, with fabrication-format exports for selected components.
+Modeling and documenting a mechanism and its parts in SolidWorks, with fabrication-format exports for selected components.

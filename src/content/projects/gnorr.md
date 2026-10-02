@@ -5,17 +5,14 @@ summary: "An autonomous boat designed, built, and programmed to carry a naval or
 order: 1
 status: "Built and competed"
 tools: ["SOLIDWORKS", "CAD", "Programming"]
-hero: "/images/cad/gnorr-main.webp"
-heroAlt: "CAD render of the GNORR HullV5 boat hull model"
+hero: "/images/projects/gnorr-assembly.webp"
+heroAlt: "SolidWorks CAD assembly view of the GNORR autonomous boat hull and rudder linkage"
 category: "MARINE SYSTEMS · UCF"
 result: "3rd place · UCF Engineering · 450 students"
 gallery:
-  - src: "/images/cad/gnorr-cap-detail.webp"
-    alt: "STL render of the BoatCap component in the GNORR design files"
-    caption: "The BoatCap is modeled as a separate component in the project files."
-  - src: "/images/cad/gnorr-propeller-detail.webp"
-    alt: "STL render of the Propeller component in the GNORR design files"
-    caption: "The Propeller is modeled as a separate part in the project files."
+  - src: "/images/projects/gnorr-detail.webp"
+    alt: "Close view of the boat's stern and rudder linkage in the SolidWorks assembly"
+    caption: "Stern detail showing the rudder linkage and its mounting hardware."
 ---
 
 The Great Naval Orange Race challenged our team to design, build, and program a miniature autonomous boat. It needed to carry a naval orange all the way around the reflecting pond at the University of Central Florida.

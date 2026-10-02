@@ -1,20 +1,17 @@
 ---
 title: "Sugar Rocket"
-subtitle: "Nozzle hardware · independent project"
+subtitle: "Rocket motor · independent project"
 summary: "A developing rocket design documented through its nozzle carrier, graphite insert, and manufacturing files."
 order: 2
 status: "In the design stage"
 tools: ["SOLIDWORKS", "CAD", "Design documentation"]
-hero: "/images/cad/sugar-rocket-main.webp"
-heroAlt: "STL render of the Nozzle Carrier V1 model"
+hero: "/images/projects/sugar-rocket-motor.webp"
+heroAlt: "SolidWorks CAD assembly view of a rocket motor with its nozzle and carrier"
 category: "AEROSPACE · INDEPENDENT"
 gallery:
-  - src: "/images/cad/sugar-rocket-angle-end.webp"
-    alt: "End view of the Sugar Rocket nozzle carrier STL model"
-    caption: "End view of Nozzle Carrier V1."
-  - src: "/images/cad/sugar-rocket-angle-side.webp"
-    alt: "Side view of the Sugar Rocket nozzle carrier STL model"
-    caption: "Side view of the same nozzle carrier model."
+  - src: "/images/projects/sugar-rocket-detail.webp"
+    alt: "Close view into the rocket motor's nozzle opening and internal passage"
+    caption: "Nozzle detail showing the converging passage within the motor assembly."
 ---
 
 Sugar Rocket is an independent project to design a sturdy, lightweight rocket using heat-resistant materials such as graphite for the nozzle. The project is currently in the design stage.

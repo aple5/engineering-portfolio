@@ -86,7 +86,7 @@ img { display: block; max-width: 100%; }
 .project-result span { color: #77923d; }
 .text-link { display: inline-flex; align-items: center; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid var(--green); color: var(--green); font-size: 13px; font-weight: 650; }
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(26px, 5vw, 66px); }
-.project-grid .project-image-link { aspect-ratio: 1.59; }
+.project-grid .project-image-link { aspect-ratio: 1.51; }
 .project-grid .project-card-copy { padding-top: 24px; }
 .project-grid .project-card h3 { font-size: clamp(25px, 3vw, 32px); }
 .project-grid .project-card-copy > p:not(.eyebrow) { max-width: 470px; }
@@ -136,7 +136,7 @@ img { display: block; max-width: 100%; }
 .case-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .case-tags span { padding: 5px 9px; border: 1px solid var(--rule); color: #565b53; font-family: var(--mono); font-size: 10px; letter-spacing: .01em; }
 .case-hero { margin-top: 0; }
-.case-hero > img { width: 100%; max-height: 630px; aspect-ratio: 1.88; object-fit: cover; background: var(--paper-deep); }
+.case-hero > img { width: 100%; aspect-ratio: 1.51; object-fit: cover; background: var(--paper-deep); }
 .case-hero figcaption { display: flex; justify-content: space-between; padding-top: 12px; color: #7b7e74; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; }
 .case-body-grid { display: grid; grid-template-columns: minmax(185px, .58fr) minmax(0, 1.42fr); gap: clamp(43px, 9vw, 128px); padding-top: 78px; padding-bottom: 83px; }
 .case-facts { align-self: start; display: grid; gap: 23px; }
@@ -157,7 +157,8 @@ img { display: block; max-width: 100%; }
 .gallery-heading h2 em { color: var(--green); }
 .gallery-count { margin-bottom: 5px; color: #777b71; font-family: var(--mono); font-size: 9px; letter-spacing: .1em; }
 .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 31px 23px; }
-.gallery-image { overflow: hidden; aspect-ratio: 1.48; background: var(--paper-deep); }
+.gallery-grid-single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+.gallery-image { overflow: hidden; aspect-ratio: 1.5; background: var(--paper-deep); }
 .gallery-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
 .gallery-image:hover img { transform: scale(1.025); }
 .gallery-item figcaption { display: grid; grid-template-columns: 26px 1fr; gap: 9px; padding-top: 10px; color: #61665d; font-size: 12px; line-height: 1.6; }
@@ -208,7 +209,7 @@ img { display: block; max-width: 100%; }
   .project-card-copy > p:not(.eyebrow) { margin-top: 12px; font-size: 14px; }
   .text-link { margin-top: 18px; }
   .project-grid { grid-template-columns: 1fr; gap: 42px; }
-  .project-grid .project-image-link { aspect-ratio: 1.5; }
+  .project-grid .project-image-link { aspect-ratio: 1.51; }
   .project-grid .project-card-copy { padding-top: 17px; }
   .about-section { padding-block: 67px; }
   .about-inner { grid-template-columns: 1fr; gap: 27px; }
@@ -226,7 +227,7 @@ img { display: block; max-width: 100%; }
   .case-header { padding-top: 48px; padding-bottom: 25px; }
   .case-header h1 { font-size: clamp(47px, 11vw, 67px); }
   .case-summary { font-size: 15px; }
-  .case-hero > img { aspect-ratio: 1.28; }
+  .case-hero > img { aspect-ratio: 1.51; }
   .case-hero figcaption { font-size: 8px; }
   .case-body-grid { grid-template-columns: 1fr; gap: 34px; padding-top: 45px; padding-bottom: 55px; }
   .case-facts { grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -235,7 +236,7 @@ img { display: block; max-width: 100%; }
   .case-prose p { font-size: 15px; }
   .case-gallery { padding-bottom: 63px; }
   .gallery-grid { grid-template-columns: 1fr; gap: 25px; }
-  .gallery-image { aspect-ratio: 1.44; }
+  .gallery-image { aspect-ratio: 1.5; }
   .next-project { margin-bottom: 58px; }
   .not-found { padding-top: 12vh; }
 }
