@@ -7,6 +7,6 @@ export const profile = {
   gpa: '3.75 GPA',
   certification: 'CSWA · Certified SOLIDWORKS Associate',
   email: 'alecschneider@outlook.com',
-  linkedin: 'https://www.linkedin.com/in/alec-schneider',
+  linkedin: 'https://www.linkedin.com/in/alec-schneider-454236353',
   resume: '/Alec-Schneider-Resume.pdf',
 } as const;
